@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node --env-file=.env server/server.js",
-    "dev": "node --env-file=.env server/server.js"
+    "dev": "node --env-file=.env server/server.js",
+    "test": "node --check server/server.js && node --test test/basic.test.js"
   },
   "keywords": [
     "ecommerce",
