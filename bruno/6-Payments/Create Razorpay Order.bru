@@ -1,0 +1,22 @@
+meta {
+  name: Create Razorpay Order
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/create-order
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "amount": 999,
+    "currency": "INR",
+    "receipt": "rcpt_test_01",
+    "notes": {
+      "customerName": "Test Shopper"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "uprumm-store",
+  "version": "2.0.0",
+  "description": "Uprumm — Graphic T-Shirt E-Commerce Platform with Customer Accounts, Product Management, Razorpay Payments, Order Tracking, Admin Dashboard, and Shipping Integration",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env server/server.js",
+    "dev": "node --env-file=.env server/server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "storefront",
+    "razorpay",
+    "streetwear",
+    "tshirt-store",
+    "admin-dashboard",
+    "order-tracking"
+  ],
+  "author": "Uprumm Studio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^9.11.2"
+  }
+}

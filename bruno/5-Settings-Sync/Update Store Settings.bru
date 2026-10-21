@@ -1,0 +1,20 @@
+meta {
+  name: Update Store Settings
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/settings
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "freeShippingThreshold": 1499,
+    "standardShippingFee": 99,
+    "expressShippingFee": 149,
+    "razorpayMode": "simulation"
+  }
+}

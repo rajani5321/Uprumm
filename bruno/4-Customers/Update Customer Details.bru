@@ -1,0 +1,19 @@
+meta {
+  name: Update Customer Details
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{baseUrl}}/api/management/customers/usr_demo_101
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "address": "45 Indiranagar 100ft Road"
+  }
+}

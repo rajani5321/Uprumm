@@ -1,0 +1,171 @@
+{
+  "products": [],
+  "orders": [
+    {
+      "id": "UPR-2026-TESTCOD",
+      "date": "2026-10-21 16:30",
+      "customer": {
+        "name": "Rajanikanta Tudu",
+        "email": "rajanitest@uprumm.in",
+        "phone": "9749535523",
+        "address": "Studio Street",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "pincode": "700001"
+      },
+      "items": [
+        {
+          "id": "p1",
+          "name": "Oversized Streetwear Tee",
+          "size": "L",
+          "price": 999,
+          "qty": 1,
+          "title": "Oversized Streetwear Tee"
+        }
+      ],
+      "itemsTotal": 999,
+      "shippingFee": 99,
+      "codFee": 0,
+      "grandTotal": 1098,
+      "paymentMethod": "Cash on Delivery (COD)",
+      "paymentId": "pay_cod_123456789",
+      "paymentStatus": "PENDING (Pay on Delivery)",
+      "fulfillmentStatus": "placed",
+      "courier": "Delhivery Surface",
+      "awb": "DEL-99999999IN",
+      "estimatedDelivery": "3-5 Business Days"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_1792578803577",
+      "name": "Rajanikant Customer",
+      "email": "tudurajanikant@gmail.com",
+      "phone": "9876543210",
+      "password": "61b0bd00d1cddd58a162ee01952131e6b76b523cb8f09acf9d04751165cc8d20",
+      "address": "22 Park Street",
+      "city": "Kolkata, West Bengal",
+      "state": "Maharashtra",
+      "pincode": "400001",
+      "joinedDate": "2026-10-21",
+      "role": "customer",
+      "createdAt": "2026-10-21T10:33:23.578Z"
+    },
+    {
+      "id": "usr_1792579007417",
+      "name": "Rajanikanta Tudu",
+      "email": "tudurajanikan@gmail.com",
+      "phone": "9933750023",
+      "password": "7afc4aeaa61e01be22c750a13435e738e7e133a061152e702d2b875084114543",
+      "address": "Flat 101, Main Road",
+      "city": "GOLAPI CHAK",
+      "state": "DAKSHIN AMCHata",
+      "pincode": "400001",
+      "joinedDate": "2026-10-21",
+      "role": "customer",
+      "createdAt": "2026-10-21T10:36:47.422Z"
+    },
+    {
+      "id": "usr_1792579925164",
+      "name": "Rajanikanta Tudu",
+      "email": "rajanitest@uprumm.in",
+      "phone": "9749535523",
+      "address": "Studio Street",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700001",
+      "role": "customer",
+      "joinedDate": "2026-10-21",
+      "createdAt": "2026-10-21T10:52:05.164Z"
+    },
+    {
+      "name": "Amit Kumar",
+      "email": "amit@gmail.com",
+      "phone": "9876543210",
+      "address": "Salt Lake Sector 5",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700091",
+      "id": "usr_1792580600456",
+      "role": "customer",
+      "joinedDate": "2026-10-21",
+      "createdAt": "2026-10-21T11:03:20.456Z"
+    },
+    {
+      "id": "usr_1792583129166",
+      "name": "krishna",
+      "email": "krishnakanta@gmail.com",
+      "phone": "9999999999",
+      "password": "7afc4aeaa61e01be22c750a13435e738e7e133a061152e702d2b875084114543",
+      "role": "customer",
+      "address": "S/O Sankar Tudu, LEDASULI",
+      "city": "MEDINIPUR",
+      "state": "India",
+      "pincode": "721515",
+      "_id": "6ad8a5d9c2c8fd50ca632c97",
+      "createdAt": "2026-10-21T11:45:29.293Z",
+      "__v": 0,
+      "joinedDate": "2026-10-21"
+    },
+    {
+      "id": "usr_1792583686244",
+      "name": "sankar",
+      "email": "sankat@gmail.com",
+      "phone": "5555555555",
+      "password": "7afc4aeaa61e01be22c750a13435e738e7e133a061152e702d2b875084114543",
+      "role": "customer",
+      "address": "GOLAPI CHAK, DAKSHIN AMCHata",
+      "city": "GOLAPI CHAK, DAKSHIN AMCHata",
+      "state": "India",
+      "pincode": "721102",
+      "_id": "6ad8a807c2c8fd50ca632c98",
+      "createdAt": "2026-10-21T11:54:47.287Z",
+      "__v": 0,
+      "joinedDate": "2026-10-21"
+    }
+  ],
+  "settings": {
+    "key": "global_settings",
+    "razorpayKeyId": "rzp_test_TolWE9ZjRag5R7",
+    "razorpayMode": "live",
+    "freeShippingThreshold": 1499,
+    "standardShippingFee": 99,
+    "expressShippingFee": 149,
+    "hasInitializedCatalog": true,
+    "deletedProductIds": [
+      "101",
+      "102",
+      "103",
+      "104",
+      "105",
+      "1792240982930",
+      "1792264311004",
+      "1792266704560",
+      "1792266647497",
+      "1792267823517"
+    ]
+  },
+  "deletedIds": [
+    "101",
+    "102",
+    "103",
+    "104",
+    "105",
+    "1792240982930",
+    101,
+    102,
+    103,
+    104,
+    105,
+    1792240982930,
+    "1792264311004",
+    1792264311004,
+    "1792266704560",
+    1792266704560,
+    "1792266647497",
+    1792266647497,
+    "1792267823517",
+    1792267823517
+  ],
+  "updatedAt": "2026-10-21T11:55:30.796Z"
+}

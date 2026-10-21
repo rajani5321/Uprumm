@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#171815" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Uprumm Studio — Private Store Management & Admin Portal" />
+  <title>Uprumm Studio — Private Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3.5" />
+  <link rel="stylesheet" href="css/admin.css?v=4.0" />
+</head>
+
+<body>
+  <!-- ==========================================================================
+       SCREEN 1: RESTRICTED ADMIN AUTHENTICATION BARRIER
+       Shown exclusively when administrator is not authenticated
+       ========================================================================== -->
+  <section class="admin-auth-screen" id="admin-auth-screen">
+    <div class="admin-auth-box">
+      <div class="admin-auth-header">
+
+        <h1 class="admin-auth-title">Uprumm Studio</h1>
+
+      </div>
+
+      <div class="admin-error-box" id="admin-auth-error" role="alert">
+        <span>⚠️</span>
+        <span id="admin-auth-error-text">Invalid administrator email or password.</span>
+      </div>
+
+      <form id="admin-auth-form" autocomplete="on">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="admin-auth-email">Administrator Email</label>
+          <div class="admin-input-wrap">
+            <span class="admin-input-icon">✉️</span>
+            <input type="email" id="admin-auth-email" class="admin-input" placeholder="tudurajanikanta@gmail.com" autocomplete="username" required />
+          </div>
+        </div>
+
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="admin-auth-password">Security Password / PIN</label>
+          <div class="admin-input-wrap">
+            <span class="admin-input-icon">🔒</span>
+            <input type="password" id="admin-auth-password" class="admin-input" placeholder="Enter admin password"
+              autocomplete="current-password" required />
+            <button type="button" class="admin-pw-toggle" id="admin-pw-toggle"
+              aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="admin-form-options" style="margin-bottom: 1.25rem;">
+          <label class="admin-checkbox-label"
+            style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #a1a1aa; cursor: pointer;">
+            <input type="checkbox" id="admin-remember-me" checked style="accent-color: #6366f1; width: 16px; height: 16px;" />
+            <span>Keep me authenticated on this device</span>
+          </label>
+        </div>
+
+        <button type="submit" class="admin-submit-btn" id="admin-sign-in-btn">
+          <span>Authorize &amp; Sign In</span>
+          <span>⚡</span>
+        </button>
+      </form>
+
+      <div class="admin-auth-footer">
+        <a href="/" class="admin-auth-link" title="Return to public customer website">
+          <span>←</span> Back to Public Website
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SCREEN 2: COMPLETE ADMIN STUDIO MANAGEMENT SUITE
+       Rendered exclusively after successful Administrator Authentication
+       ========================================================================== -->
+  <div class="admin-management-view" id="admin-management-view" style="display: none;">
+    <!-- Admin Mobile Drawer Backdrop Overlay -->
+    <div class="admin-sidebar-overlay" id="admin-sidebar-overlay"></div>
+
+    <div class="admin-wrapper">
+      <!-- Admin Sidebar Navigation (Desktop Left Sidebar & Mobile Drawer) -->
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <div class="admin-brand">
+            <span class="admin-icon">⚡</span>
+            <div>
+              <h3>Uprumm Studio</h3>
+              <span>Store Management Suite</span>
+            </div>
+          </div>
+          <button type="button" class="admin-sidebar-close-btn" id="admin-sidebar-close-btn"
+            aria-label="Close sidebar">×</button>
+        </div>
+
+        <nav class="admin-nav">
+          <button class="admin-nav-item active" data-tab="adm-overview">
+            <span>📊</span> Overview &amp; KPIs
+          </button>
+          <button class="admin-nav-item" data-tab="adm-products">
+            <span>👕</span> Products &amp; Custom Drops
+          </button>
+          <button class="admin-nav-item" data-tab="adm-orders">
+            <span>📦</span> Orders &amp; Shipping Status
+          </button>
+          <button class="admin-nav-item" data-tab="adm-customers">
+            <span>👥</span> Customer Accounts
+          </button>
+          <button class="admin-nav-item" data-tab="adm-stock">
+            <span>📈</span> Stock &amp; Inventory
+          </button>
+          <button class="admin-nav-item" data-tab="adm-settings">
+            <span>⚙️</span> Store &amp; Shipping Preferences
+          </button>
+        </nav>
+
+        <div class="admin-sidebar-footer">
+          <a href="/" target="_blank" rel="noopener" class="button button-outline admin-exit-btn"
+            id="admin-side-preview-btn" style="text-decoration:none;">
+            <span>🌐</span> View Storefront ↗
+          </a>
+          <button type="button" class="button button-outline admin-exit-btn" id="admin-side-logout-btn"
+            style="margin-top: 8px;">
+            <span>🚪</span> Log Out of Admin
+          </button>
+        </div>
+      </aside>
+
+      <!-- Admin Main Content Area -->
+      <main class="admin-main">
+        <div class="admin-topbar">
+          <button type="button" class="admin-mobile-menu-btn" id="admin-mobile-menu-btn"
+            aria-label="Toggle Admin Sidebar">
+            <span class="adm-burger-icon">☰</span>
+            <span class="adm-menu-label">Menu</span>
+          </button>
+
+          <div class="admin-top-title">
+            <div class="adm-title-row">
+              <h2 id="adm-active-tab-title">Studio Overview</h2>
+              <span class="adm-mobile-badge">⚡ Admin</span>
+            </div>
+            <span class="adm-subtitle">Manage catalog, customer orders, live shipping, and store stock</span>
+          </div>
+
+          <div class="admin-top-actions">
+            <button class="button button-dark adm-action-add" id="adm-add-product-btn" title="Add New T-Shirt Drop">
+              <span class="adm-btn-short">+ Add</span>
+              <span class="adm-btn-full">+ Add New T-Shirt</span>
+            </button>
+            <a href="/" target="_blank" rel="noopener" class="button button-outline adm-action-icon"
+              id="adm-preview-top-btn" title="Open Customer Storefront Website in New Tab"
+              style="text-decoration:none;">
+              <span class="adm-btn-icon">🌐</span>
+              <span class="adm-btn-text">View Website ↗</span>
+            </a>
+            <button class="button button-outline adm-action-icon" id="adm-top-logout-btn" title="Log Out Securely">
+              <span class="adm-btn-icon">🚪</span>
+              <span class="adm-btn-text">Log Out</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 1. OVERVIEW & KPIS PANEL -->
+        <section class="admin-panel active" id="adm-overview">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-label">TOTAL REVENUE</span>
+              <h3 class="kpi-value" id="kpi-revenue">₹0</h3>
+              <span class="kpi-trend green">↑ Live online orders</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">ACTIVE ORDERS</span>
+              <h3 class="kpi-value" id="kpi-orders">0 Orders</h3>
+              <span class="kpi-trend green">Cash on Delivery Verified</span>
+            </div>
+            <div class="kpi-card" id="kpi-card-customers" style="cursor: pointer;" title="Click to view Customer Accounts">
+              <span class="kpi-label">REGISTERED CUSTOMERS</span>
+              <h3 class="kpi-value green" id="kpi-customers">0 Shoppers</h3>
+              <span class="kpi-trend green">👥 View All Accounts →</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">TOTAL PRODUCTS</span>
+              <h3 class="kpi-value" id="kpi-products">0 T-Shirts</h3>
+              <span class="kpi-trend">Active drops in store</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-label">LOW STOCK ITEMS</span>
+              <h3 class="kpi-value warning" id="kpi-low-stock">0 Sizes</h3>
+              <span class="kpi-trend red">Need restocking soon</span>
+            </div>
+          </div>
+
+          <div class="adm-split-grid">
+            <!-- Recent Orders Feed -->
+            <div class="adm-card">
+              <div class="adm-card-head">
+                <h4>Recent Store Orders</h4>
+                <button class="text-link" id="goto-all-orders">View All Orders</button>
+              </div>
+              <div class="table-responsive">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>
+                      <th>Total</th>
+                      <th>Payment</th>
+                      <th>Delivery Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adm-recent-orders-tbody">
+                    <!-- Populated by admin.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Quick Store Insights -->
+            <div class="adm-card">
+              <div class="adm-card-head">
+                <h4>Quick Studio Controls</h4>
+              </div>
+              <div class="studio-quick-list">
+                <div class="sql-item">
+                  <div>
+                    <strong>Payment Method</strong>
+                    <p id="adm-gate-status">Cash on Delivery (Pay on Delivery Active)</p>
+                  </div>
+                  <span class="badge-tag green">ACTIVE</span>
+                </div>
+                <div class="sql-item">
+                  <div>
+                    <strong>Shipping Policy</strong>
+                    <p>Free delivery above ₹1,499 · Delhivery Air &amp; Surface</p>
+                  </div>
+                  <span class="badge-tag">CONFIGURED</span>
+                </div>
+                <div class="sql-item">
+                  <div>
+                    <strong>Customer Registrations</strong>
+                    <p id="adm-quick-customer-count">Active registered shoppers</p>
+                  </div>
+                  <span class="badge-tag green">LIVE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Registered Customers Feed (Full-Width) -->
+            <div class="adm-card" style="grid-column: 1 / -1; margin-top: 4px;">
+              <div class="adm-card-head">
+                <div>
+                  <h4>👥 Registered Customer Accounts (Live Store Registrations)</h4>
+                  <p class="text-muted" style="margin: 0; font-size: 12px;">Real shoppers who created accounts on your public website.</p>
+                </div>
+                <button class="button button-outline" id="goto-all-customers" style="min-height: 32px; padding: 0 14px; font-size: 11px;">
+                  Open All Customer Accounts →
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Customer</th>
+                      <th>Email ID</th>
+                      <th>Phone</th>
+                      <th>Delivery Address</th>
+                      <th>Joined Date</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adm-recent-customers-tbody">
+                    <!-- Populated by admin.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. PRODUCTS MANAGEMENT PANEL -->
+        <section class="admin-panel" id="adm-products">
+          <div class="adm-card">
+            <div class="adm-card-head">
+              <div>
+                <h4>Catalog &amp; Custom Products</h4>
+                <p class="text-muted">Manage your T-shirt drops, photos, logo designs, prices, and stock in real time.
+                </p>
+              </div>
+              <div class="adm-head-actions">
+                <button type="button" class="button button-dark" id="adm-add-prod-btn2">
+                  + Add New Drop
+                </button>
+              </div>
+            </div>
+
+            <!-- Filter & Search Toolbar -->
+            <div class="adm-prod-toolbar">
+              <div class="adm-prod-pills" id="adm-prod-cat-pills">
+                <button type="button" class="adm-cat-pill active" data-cat="all">
+                  All Drops <span class="pill-count" id="count-all">0</span>
+                </button>
+                <button type="button" class="adm-cat-pill" data-cat="graphic">
+                  👕 Graphic Drops <span class="pill-count" id="count-graphic">0</span>
+                </button>
+                <button type="button" class="adm-cat-pill" data-cat="minimal">
+                  ⬛ Minimal Heavyweight <span class="pill-count" id="count-minimal">0</span>
+                </button>
+                <button type="button" class="adm-cat-pill" data-cat="custom">
+                  🎨 Custom Products <span class="pill-count" id="count-custom">0</span>
+                </button>
+                <button type="button" class="adm-cat-pill" data-cat="low-stock">
+                  ⚠️ Low Stock <span class="pill-count" id="count-low-stock">0</span>
+                </button>
+              </div>
+              <div class="adm-prod-search-box">
+                <input type="text" id="adm-prod-search" placeholder="🔍 Search drops by name, badge, ID...">
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="adm-table" id="adm-products-table">
+                <thead>
+                  <tr>
+                    <th>Product Drop</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Sizes Available</th>
+                    <th>Total Stock</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adm-products-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ORDERS MANAGEMENT PANEL -->
+        <section class="admin-panel" id="adm-orders">
+          <div class="adm-card">
+            <div class="adm-card-head">
+              <div>
+                <h4>Customer Orders &amp; Shipping Status</h4>
+                <p class="text-muted">Update order fulfillment status, set AWB courier numbers, and view customer
+                  shipping details.</p>
+              </div>
+              <div class="orders-filter-row" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                <input type="text" id="adm-order-search"
+                  placeholder="🔍 Search orders by ID, customer name, phone, AWB..."
+                  style="flex:1; min-width:200px; min-height:38px; border-radius:8px; font-size:13px; padding:8px 12px; border:1px solid #cbd5e1; background:#ffffff;">
+                <select id="adm-order-status-filter" style="min-width:140px;">
+                  <option value="all">All Orders</option>
+                  <option value="placed">Placed</option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="printing">Printing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="delivered">Delivered</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="adm-table" id="adm-orders-table">
+                <thead>
+                  <tr>
+                    <th>Order Ref</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total Amount</th>
+                    <th>Payment</th>
+                    <th>Fulfillment Status</th>
+                    <th>Courier AWB</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adm-orders-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. CUSTOMERS MANAGEMENT PANEL -->
+        <section class="admin-panel" id="adm-customers">
+          <div class="adm-card">
+            <div class="adm-card-head">
+              <div>
+                <h4>Registered Customer Accounts</h4>
+                <p class="text-muted">View registered shopper profiles, phone contacts, shipping cities, and lifetime
+                  spend.</p>
+              </div>
+              <div class="adm-card-actions" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                <input type="search" id="adm-customers-search-input" placeholder="Search by name, email, phone..." style="width:240px; padding:7px 12px; font-size:12px; border:1px solid var(--line); border-radius:4px; background:var(--paper-card); color:var(--ink);">
+                <button type="button" class="button button-outline" id="adm-refresh-customers-btn" title="Refresh customer accounts" style="min-height:34px; padding:0 14px; font-size:11px;">
+                  🔄 Refresh
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="adm-table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Delivery Address</th>
+                    <th>Total Orders</th>
+                    <th>Total Spent</th>
+                    <th>Joined</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adm-customers-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. STOCK & INVENTORY MATRIX -->
+        <section class="admin-panel" id="adm-stock">
+          <div class="adm-card">
+            <div class="adm-card-head">
+              <div>
+                <h4>Size-Wise Inventory &amp; Stock Control</h4>
+                <p class="text-muted">Monitor stock levels per size (S, M, L, XL, XXL) and make quick adjustments with
+                  1-click controls.</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="adm-table" id="adm-stock-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Size S</th>
+                    <th>Size M</th>
+                    <th>Size L</th>
+                    <th>Size XL</th>
+                    <th>Size XXL</th>
+                    <th>Overall Stock</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="adm-stock-tbody">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SETTINGS & STORE CONFIGURATION -->
+        <section class="admin-panel" id="adm-settings">
+          <div class="adm-card">
+            <div class="adm-card-head">
+              <div>
+                <h4>Store Configuration &amp; Preferences</h4>
+                <p class="text-muted">Configure shipping rate rules and studio preferences.</p>
+              </div>
+            </div>
+
+            <form id="store-settings-form" class="settings-form">
+              <div class="settings-section">
+                <h5>Payment Method Policy</h5>
+                <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:6px; padding:14px; margin-bottom:12px;">
+                  <strong style="color:#15803d; display:block; margin-bottom:4px;">✓ Cash on Delivery (COD) Exclusively Active</strong>
+                  <p style="font-size:12px; color:#166534; margin:0;">All storefront checkouts are processed via Cash on Delivery / Pay on Delivery. Online payment gateway sections have been completely removed.</p>
+                </div>
+              </div>
+
+              <div class="settings-section">
+                <h5>Shipping &amp; Delivery Rules</h5>
+                <div class="form-grid-3">
+                  <div class="form-group">
+                    <label for="set-free-threshold">Free Shipping Order Min (₹)</label>
+                    <input type="number" id="set-free-threshold" value="1499">
+                  </div>
+                  <div class="form-group">
+                    <label for="set-std-fee">Standard Shipping Fee (₹)</label>
+                    <input type="number" id="set-std-fee" value="99">
+                  </div>
+                  <div class="form-group">
+                    <label for="set-exp-fee">Priority Express Air Fee (₹)</label>
+                    <input type="number" id="set-exp-fee" value="149">
+                  </div>
+                </div>
+              </div>
+
+              <div class="settings-section">
+                <h5>📁 Local &amp; Server Artwork Media Storage</h5>
+                <p>All uploaded T-shirt photos and graphic design artworks are hosted directly on the server's local
+                  media storage (<code>/uploads</code>).</p>
+                <div id="adm-storage-status-badge"
+                  style="display:inline-flex; align-items:center; gap:8px; padding:6px 12px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:4px; font-size:11px; margin-top:6px;">
+                  <span
+                    style="width:8px; height:8px; border-radius:50%; background:#16a34a; display:inline-block;"></span>
+                  <span><strong>✓ Self-Hosted Media Storage Active</strong> — Direct server disk storage without
+                    external CDN dependencies.</span>
+                </div>
+              </div>
+
+              <div class="settings-section">
+                <h5>Data Management</h5>
+                <p>Wipe orders, customers, and catalog to start with a 100% clean slate.</p>
+                <button type="button" class="button button-outline" id="adm-reset-data-btn">Clear Catalog &amp; Reset to
+                  Clean Slate</button>
+              </div>
+
+              <div class="settings-actions">
+                <button type="submit" class="button button-dark">Save Store Settings <span>✓</span></button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODALS: PRODUCT EDITOR & PHOTO/LOGO UPLOAD
+       ========================================================================== -->
+  <dialog class="product-editor-modal" id="product-editor-modal">
+    <div class="pem-content">
+      <div class="pem-header">
+        <div>
+          <p class="eyebrow">PRODUCT MANAGEMENT</p>
+          <h2 id="pem-title">Add New T-Shirt Drop</h2>
+        </div>
+        <button class="modal-close" id="close-pem-btn" aria-label="Close product editor">×</button>
+      </div>
+
+      <form id="product-editor-form" class="pem-form">
+        <input type="hidden" id="pem-prod-id" value="">
+
+        <div class="pem-grid">
+          <!-- Left: Details Form -->
+          <div class="pem-left">
+            <div class="form-group">
+              <label for="pem-name">Product Name *</label>
+              <input type="text" id="pem-name" placeholder="e.g. Cyber Tokyo Oversized Tee" required>
+            </div>
+
+            <div class="form-group">
+              <label for="pem-subtitle">Subtitle / Fit Description *</label>
+              <input type="text" id="pem-subtitle" placeholder="e.g. Oversized 240 GSM · Chest Logo" required>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label for="pem-price">Selling Price (₹) *</label>
+                <input type="number" id="pem-price" placeholder="899" required min="99">
+              </div>
+              <div class="form-group">
+                <label for="pem-category">Category *</label>
+                <select id="pem-category" required>
+                  <option value="graphic">Graphic</option>
+                  <option value="minimal">Minimal</option>
+                  <option value="custom">Custom Drop</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pem-badge">Badge Label</label>
+                <input type="text" id="pem-badge" placeholder="e.g. NEW DROP, BESTSELLER">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pem-description">Product Story &amp; Fabric Details</label>
+              <textarea id="pem-description" rows="3"
+                placeholder="Crafted with 240 GSM heavy combed cotton. Relaxed streetwear fit with high-density screen print."></textarea>
+            </div>
+
+            <!-- Sizes & Stock Inputs -->
+            <div class="form-group">
+              <label>Stock Count by Size *</label>
+              <div class="size-stock-inputs">
+                <div class="ss-item">
+                  <span>Size S</span>
+                  <input type="number" id="pem-stock-s" value="10" min="0">
+                </div>
+                <div class="ss-item">
+                  <span>Size M</span>
+                  <input type="number" id="pem-stock-m" value="15" min="0">
+                </div>
+                <div class="ss-item">
+                  <span>Size L</span>
+                  <input type="number" id="pem-stock-l" value="12" min="0">
+                </div>
+                <div class="ss-item">
+                  <span>Size XL</span>
+                  <input type="number" id="pem-stock-xl" value="8" min="0">
+                </div>
+                <div class="ss-item">
+                  <span>Size XXL</span>
+                  <input type="number" id="pem-stock-xxl" value="5" min="0">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Photo & Logo Design Upload with Live Preview -->
+          <div class="pem-right">
+            <!-- 1. T-Shirt Photo Upload -->
+            <div class="upload-box" id="pem-photo-upload-box">
+              <div class="upload-header-row">
+                <label class="upload-label">
+                  <strong>1. T-Shirt Base Photo / Mockup</strong>
+                  <span class="text-muted">Upload from device or paste web image URL</span>
+                </label>
+                <div class="upload-mode-toggle" id="pem-photo-mode-toggle" role="tablist"
+                  aria-label="Base photo upload method">
+                  <button type="button" class="upload-mode-tab active" data-mode="file" id="pem-photo-tab-file">
+                    📁 File Upload
+                  </button>
+                  <button type="button" class="upload-mode-tab" data-mode="url" id="pem-photo-tab-url">
+                    🔗 Image URL
+                  </button>
+                </div>
+              </div>
+
+              <!-- Normal File Upload Drop Area -->
+              <div class="file-drop-area upload-panel" id="drop-photo-area">
+                <input type="file" id="pem-photo-input" accept="image/*" class="file-input-hidden">
+                <div class="drop-message" id="drop-photo-msg">
+                  <span class="upload-icon">📷</span>
+                  <p>Click to browse or drop T-shirt image</p>
+                  <small>PNG, JPG, WebP supported from computer or phone</small>
+                </div>
+              </div>
+
+              <!-- URL-Based Photo Upload Panel -->
+              <div class="url-upload-panel upload-panel" id="pem-photo-url-wrap" style="display:none;">
+                <div class="url-input-group">
+                  <span class="url-input-icon">🔗</span>
+                  <input type="url" id="pem-photo-url-input" class="pem-url-input"
+                    placeholder="Paste image URL (e.g. https://... or /uploads/...)" autocomplete="off"
+                    spellcheck="false">
+                  <button type="button" id="pem-apply-photo-url-btn" class="button button-dark pem-apply-url-btn">
+                    Apply URL
+                  </button>
+                </div>
+                <div class="url-status-row">
+                  <span class="url-status-msg" id="pem-photo-url-status">Enter any public image URL or CDN web
+                    link</span>
+                  <button type="button" class="url-clear-btn" id="pem-clear-photo-url-btn"
+                    style="display:none;">Clear</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Logo Design Upload -->
+            <div class="upload-box" id="pem-logo-upload-box">
+              <div class="upload-header-row">
+                <label class="upload-label">
+                  <strong>2. Logo / Graphic Artwork Upload</strong>
+                  <span class="text-muted">Upload transparent logo or paste design URL</span>
+                </label>
+                <div class="upload-mode-toggle" id="pem-logo-mode-toggle" role="tablist"
+                  aria-label="Logo artwork upload method">
+                  <button type="button" class="upload-mode-tab active" data-mode="file" id="pem-logo-tab-file">
+                    📁 File Upload
+                  </button>
+                  <button type="button" class="upload-mode-tab" data-mode="url" id="pem-logo-tab-url">
+                    🔗 Artwork URL
+                  </button>
+                </div>
+              </div>
+
+              <!-- Normal File Upload Drop Area -->
+              <div class="file-drop-area upload-panel" id="drop-logo-area">
+                <input type="file" id="pem-logo-input" accept="image/*" class="file-input-hidden">
+                <div class="drop-message" id="drop-logo-msg">
+                  <span class="upload-icon">🎨</span>
+                  <p>Upload transparent logo or graphic design</p>
+                  <small>PNG or SVG recommended</small>
+                </div>
+              </div>
+
+              <!-- URL-Based Artwork Upload Panel -->
+              <div class="url-upload-panel upload-panel" id="pem-logo-url-wrap" style="display:none;">
+                <div class="url-input-group">
+                  <span class="url-input-icon">🎨</span>
+                  <input type="url" id="pem-logo-url-input" class="pem-url-input"
+                    placeholder="Paste artwork URL (PNG / SVG with transparent background)" autocomplete="off"
+                    spellcheck="false">
+                  <button type="button" id="pem-apply-logo-url-btn" class="button button-dark pem-apply-url-btn">
+                    Apply Artwork
+                  </button>
+                </div>
+                <div class="url-status-row">
+                  <span class="url-status-msg" id="pem-logo-url-status">Paste transparent PNG, SVG, or WebP web
+                    link</span>
+                  <button type="button" class="url-clear-btn" id="pem-clear-logo-url-btn"
+                    style="display:none;">Clear</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Mockup Canvas Preview -->
+            <div class="live-preview-box">
+              <span class="preview-headline">LIVE PREVIEW</span>
+              <div class="preview-canvas" id="pem-preview-canvas">
+                <img id="pem-preview-base-img"
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
+                  alt="T-Shirt Base">
+                <div class="logo-overlay" id="pem-logo-overlay" style="display: none;">
+                  <img id="pem-preview-logo-img" src="" alt="Custom Logo Overlay" style="display: none;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pem-actions">
+          <button type="button" class="button button-outline" id="pem-cancel-btn">Cancel</button>
+          <button type="submit" class="button button-dark" id="pem-submit-btn">Save &amp; Publish Drop
+            <span>✓</span></button>
+          <button type="button" class="button button-dark pem-publish-view-btn" id="pem-publish-view-btn"
+            style="background:#0f172a; color:var(--lime); border:1px solid rgba(163,230,53,0.4); font-weight:700;">
+            Publish &amp; View on Website <span>🌐 ↗</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       MODAL: ORDER DETAILS & SHIPPING AWB UPDATE
+       ========================================================================== -->
+  <dialog class="order-tracking-modal" id="admin-order-modal">
+    <div class="tracking-modal-content">
+      <div class="tracking-header">
+        <div>
+          <span class="eyebrow">ORDER FULFILLMENT</span>
+          <h2 id="aom-order-ref">#ORD-0000</h2>
+        </div>
+        <button class="modal-close" id="close-aom-btn" aria-label="Close order details">×</button>
+      </div>
+
+      <div class="tracking-body" style="padding: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+          <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <strong style="display:block; font-size:12px; color:#64748b; margin-bottom:6px;">CUSTOMER DETAILS</strong>
+            <p id="aom-customer-name" style="font-weight:700; color:#0f172a; margin-bottom:4px;">-</p>
+            <p id="aom-customer-email" style="font-size:13px; color:#475569; margin-bottom:2px;">-</p>
+            <p id="aom-customer-phone" style="font-size:13px; color:#475569;">-</p>
+          </div>
+          <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <strong style="display:block; font-size:12px; color:#64748b; margin-bottom:6px;">DELIVERY ADDRESS</strong>
+            <p id="aom-customer-address" style="font-size:13px; color:#334155; line-height:1.5;">-</p>
+          </div>
+        </div>
+
+        <div
+          style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+          <h4 style="margin-bottom: 12px; font-size: 14px;">Update Shipping &amp; Live Tracking</h4>
+          <form id="aom-shipping-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label for="aom-courier-name">Courier Partner</label>
+              <input type="text" id="aom-courier-name" placeholder="Delhivery / BlueDart / XpressBees">
+            </div>
+            <div class="form-group">
+              <label for="aom-awb-code">AWB Tracking Number</label>
+              <input type="text" id="aom-awb-code" placeholder="e.g. DEL-984210984IN">
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="aom-status-select">Fulfillment Status</label>
+              <select id="aom-status-select">
+                <option value="PLACED">1. PLACED (Order Received)</option>
+                <option value="CONFIRMED">2. CONFIRMED (Order Verified)</option>
+                <option value="PRINTING">3. PRINTING (In Screen-Printing Studio)</option>
+                <option value="SHIPPED">4. SHIPPED (Handed over to Courier)</option>
+                <option value="DELIVERED">5. DELIVERED (Successfully Handed to Customer)</option>
+              </select>
+            </div>
+            <div style="grid-column: 1 / -1; display:flex; justify-content: flex-end; gap: 10px; margin-top: 6px;">
+              <button type="button" class="button button-outline" id="aom-print-invoice-btn">📄 Print Invoice</button>
+              <button type="submit" class="button button-dark">Save Tracking Details <span>✓</span></button>
+            </div>
+          </form>
+        </div>
+
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 14px;">
+          <strong style="display:block; font-size:12px; color:#64748b; margin-bottom:10px;">ORDER ITEMS</strong>
+          <div id="aom-items-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       MODAL: CUSTOMER PROFILE & ORDER HISTORY DETAILS
+       ========================================================================== -->
+  <dialog class="order-tracking-modal" id="adm-customer-modal">
+    <div class="tracking-modal-content" style="max-width: 620px;">
+      <div class="tracking-header">
+        <div>
+          <span class="eyebrow green">REGISTERED CUSTOMER</span>
+          <h2 id="acm-name">Customer Name</h2>
+          <span style="font-size: 11px; color: var(--muted); font-family: monospace;" id="acm-id">usr_12345</span>
+        </div>
+        <button type="button" class="modal-close" id="close-adm-customer-btn" aria-label="Close modal">×</button>
+      </div>
+
+      <div class="tracking-body" style="padding: 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+          <div class="sm-card">
+            <span class="sm-label">EMAIL ADDRESS</span>
+            <p id="acm-email" style="word-break: break-all; margin: 4px 0 0; font-weight: 600;">email@domain.com</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">PHONE CONTACT</span>
+            <p id="acm-phone" style="margin: 4px 0 0; font-weight: 600;">+91 9876543210</p>
+          </div>
+          <div class="sm-card" style="grid-column: 1 / -1;">
+            <span class="sm-label">FULL DELIVERY & SHIPPING ADDRESS</span>
+            <p id="acm-address" style="margin: 4px 0 0; font-weight: 500;">Flat 101, Main Road, Kolkata, West Bengal - 700001</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">ACCOUNT JOINED</span>
+            <p id="acm-joined" style="margin: 4px 0 0; font-weight: 600;">2026-10-21</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">LIFETIME ORDERS & SPEND</span>
+            <p id="acm-spend" style="margin: 4px 0 0; font-weight: 600;">0 Orders · ₹0</p>
+          </div>
+        </div>
+
+        <div class="tr-items-box">
+          <h4 style="margin-bottom: 10px;">Customer Order History</h4>
+          <div id="acm-orders-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       MODAL: TAX INVOICE GENERATOR & PRINT VIEW
+       ========================================================================== -->
+  <dialog class="invoice-modal" id="invoice-modal">
+    <div class="invoice-container" id="printable-invoice">
+      <div class="invoice-toolbar">
+        <button type="button" class="button button-outline" id="close-invoice-btn">Close</button>
+        <button type="button" class="button button-dark" id="print-invoice-btn">Print / Save PDF
+          <span>🖨️</span></button>
+      </div>
+
+      <div class="invoice-paper" id="invoice-paper-content">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Global Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Dedicated Admin Management Engine -->
+  <script src="js/admin.js?v=4.3"></script>
+</body>
+
+</html>

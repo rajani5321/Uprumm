@@ -1,0 +1,11 @@
+meta {
+  name: Delete Product Drop
+  type: http
+  seq: 7
+}
+
+delete {
+  url: {{baseUrl}}/api/management/products/{{productId}}
+  body: none
+  auth: none
+}

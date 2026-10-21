@@ -1,0 +1,43 @@
+meta {
+  name: Create Store Order
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/orders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "UPR-2026-9001",
+    "customer": {
+      "name": "Rohan Deshmukh",
+      "email": "rohan.d@example.com",
+      "phone": "9876543210",
+      "address": "402 Palm Heights, Linking Road, Bandra West",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400050"
+    },
+    "items": [
+      {
+        "id": 1001,
+        "name": "Custom Studio Drop",
+        "price": 599,
+        "size": "L",
+        "color": "#e8e5dd",
+        "qty": 1,
+        "image": "assets/images/black-tee-front.jpg"
+      }
+    ],
+    "subtotal": 599,
+    "shippingFee": 99,
+    "grandTotal": 698,
+    "paymentMethod": "Razorpay Online",
+    "paymentStatus": "PAID",
+    "fulfillmentStatus": "confirmed"
+  }
+}

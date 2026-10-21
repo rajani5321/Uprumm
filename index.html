@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#171815" />
+  <meta name="description"
+    content="Uprumm — Expressive graphic tees and custom logo streetwear, printed for everyday wear. Shop online with Cash on Delivery, live order tracking, and fast express shipping." />
+  <title>Uprumm — Wear Your Point of View | Official Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=3.2" />
+</head>
+
+<body>
+  <!-- Customer Storefront View -->
+  <div id="customer-storefront-view">
+
+
+
+    <!-- Site Header -->
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="Uprumm Home">uprumm<span>®</span></a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#shop" class="nav-link">Shop All</a>
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="nav-link-btn" id="nav-account-btn">Sign In / Account</button>
+        <button class="nav-link-btn" id="nav-track-btn" style="display: none;">Track Order</button>
+      </nav>
+
+      <div class="header-actions">
+
+
+        <button class="icon-button search-open" id="search-open-btn" aria-label="Search products" title="Search">
+          <span class="icon">⌕</span>
+        </button>
+
+        <!-- Customer Auth / Profile Button -->
+        <button class="icon-button user-btn" id="user-btn" aria-label="Customer Account">
+          <span class="user-avatar-badge" id="user-avatar-badge">👤</span>
+          <span class="user-name-text" id="user-name-text">Sign In</span>
+        </button>
+
+        <!-- Cart Bag Button -->
+        <button class="icon-button cart-open" id="cart-open-btn" aria-label="Open shopping bag">
+          <span class="bag-label">Bag</span>
+          <span class="cart-count" id="header-cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span> AUTHENTIC CULTURAL STREETWEAR</p>
+          <h1>Wear your<br><em>roots &amp; pride.</em></h1>
+          <p class="hero-description">Original culture-led graphic tees crafted with heavy bio-washed cotton.
+            Bold chest insignias, intricate cultural back prints, tailored for street &amp; repeat wear.</p>
+          <div class="hero-actions">
+
+            <a class="button button-outline" href="#shop">Explore Collection <span>↓</span></a>
+          </div>
+          <div class="hero-note">
+
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-full-image-wrap">
+            <img src="assets/images/img1.png" alt="Hansda Cultural Streetwear - Roots, Culture, Pride" />
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <!-- Catalog Shop Section -->
+      <section class="shop-section section-pad" id="shop">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE UPRUMM EDIT</p>
+            <h2>Fresh off<br class="mobile-break"> the press<span class="accent">.</span></h2>
+          </div>
+          <div class="shop-controls">
+            <div class="filters" role="group" aria-label="Filter products">
+              <button class="filter active" data-filter="all">All tees</button>
+              <button class="filter" data-filter="graphic">Graphic</button>
+              <button class="filter" data-filter="minimal">Minimal</button>
+              <button class="filter" data-filter="custom">Custom Drops</button>
+            </div>
+            <div class="sort-wrapper">
+              <label for="sort-products" class="sr-only">Sort products</label>
+              <select id="sort-products" aria-label="Sort products">
+                <option value="featured">Sort: Featured</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Product Grid -->
+        <div class="product-grid" id="product-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <div class="center-action">
+          <button class="button button-outline" id="show-all">Explore all tees <span>↗</span></button>
+        </div>
+      </section>
+
+
+      <!-- Collections Feature Banner -->
+      <section class="collection-band section-pad" id="collections">
+        <div class="collection-copy">
+          <p class="eyebrow">THE GRAPHIC DEPARTMENT</p>
+          <h2>Roots. Culture.<br><em>Street Energy.</em></h2>
+          <p>Heavyweight fabrics, high-density screen prints, and graphics that celebrate identity with pride. From
+            bold chest crowns to intricate cultural back prints.</p>
+
+        </div>
+        <div class="collection-visual">
+          <div class="circle-stamp">H<br><span>HANSDA</span><br>®</div>
+          <img src="assets/images/img.jpeg" alt="Hansda Signature Streetwear Tee" loading="lazy">
+          <span class="vertical-label">HERITAGE DROP — GOOD FABRIC</span>
+        </div>
+      </section>
+
+
+
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <!-- Footer Contact Section -->
+        <div class="footer-contact-section" id="contact">
+          <div class="fcs-header">
+            <div>
+              <p class="eyebrow"><span class="dot"></span> DIRECT CONTACT &amp; SUPPORT</p>
+              <h3>Connect with Our Studio</h3>
+            </div>
+            <span class="fcs-availability">● Mon – Sat: 10:00 AM – 7:00 PM IST</span>
+          </div>
+          <div class="fcs-cards">
+            <a href="mailto:tudurajanikanta@gmail.com" class="fcs-card" title="Email tudurajanikanta@gmail.com">
+              <span class="fcs-icon">✉</span>
+              <div class="fcs-body">
+                <span class="fcs-tag">DIRECT EMAIL</span>
+                <strong class="fcs-val">tudurajanikanta@gmail.com</strong>
+                <strong class="fcs-val">hansdakoushik2000@gmail.com</strong>
+                <span class="fcs-sub">Fast replies on orders &amp; queries</span>
+              </div>
+              <span class="fcs-arrow">↗</span>
+            </a>
+
+            <a href="tel:+919749535523" class="fcs-card" title="Call or WhatsApp +91 97495 35523">
+              <span class="fcs-icon">📞</span>
+              <div class="fcs-body">
+                <span class="fcs-tag">PHONE &amp; WHATSAPP</span>
+                <strong class="fcs-val">+91 97495 35523</strong>
+                <strong class="fcs-val">+91 62944 93640</strong>
+                <span class="fcs-sub">Direct studio phone &amp; WhatsApp</span>
+              </div>
+              <span class="fcs-arrow">↗</span>
+            </a>
+
+            <div class="fcs-card">
+              <span class="fcs-icon">📍</span>
+              <div class="fcs-body">
+                <span class="fcs-tag">STUDIO </span>
+                <strong class="fcs-val"> Medinipur </strong>
+              </div>
+            </div>
+
+            <button type="button" class="fcs-card fcs-btn-card" id="open-contact-modal-btn">
+              <span class="fcs-icon">💬</span>
+              <div class="fcs-body">
+                <span class="fcs-tag">SEND MESSAGE</span>
+                <strong class="fcs-val">Quick Inquiry Form</strong>
+                <span class="fcs-sub">Custom drops, sizing &amp; help</span>
+              </div>
+              <span class="fcs-arrow">↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="wordmark footer-wordmark" href="#">uprumm<span>®</span></a>
+            <p>Wear your point of view. Premium printed apparel designed and printed in India.</p>
+          </div>
+          <div class="footer-links-grid">
+            <div class="fl-col">
+              <strong>Shop</strong>
+              <a href="#shop">Graphic Tees</a>
+              <a href="#collections">Collections</a>
+              <button class="footer-link-btn" id="footer-auth-btn" style="background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left;">Sign In / Account</button>
+            </div>
+
+            <div class="fl-col">
+              <strong>Developer</strong>
+              <a href="#text">Rajani Kanta Tudu</a>
+              <a href="#contact">9749535523</a>
+            </div>
+            <div class="fl-col">
+              <strong>Contact</strong>
+              <a href="mailto:tudurajanikanta@gmail.com">tudurajanikanta@gmail.com</a>
+              <a href="tel:+919749535523">+91 97495 35523</a>
+              <a href="https://wa.me/919749535523" target="_blank" rel="noopener noreferrer">WhatsApp Chat ↗</a>
+              <a href="https://www.instagram.com/i_rkt_02/?hl=en" target="_blank" rel="noopener noreferrer">Instagram
+                @i_rkt_02 ↗</a>
+              <button class="footer-link-btn" id="footer-contact-link-btn">Contact Form ↗</button>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://www.instagram.com/i_rkt_02/?hl=en" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram" title="Instagram @i_rkt_02">IG</a>
+            <a href="https://wa.me/919749535523" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+              title="WhatsApp +91 97495 35523">WA</a>
+            <a href="tel:+919749535523" aria-label="Call" title="Call +91 97495 35523">📞</a>
+            <a href="mailto:tudurajanikanta@gmail.com" aria-label="Email" title="Email tudurajanikanta@gmail.com">✉</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> Uprumm Studio LLP. All rights reserved.</span>
+          <div>
+            <a href="#story">About</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+            <a href="#collections">Collections</a>
+          </div>
+          <span> Made in India</span>
+        </div>
+      </footer>
+
+      <!-- Mobile Bottom Sticky Navigation Bar -->
+      <nav class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Mobile Navigation">
+        <a href="#shop" class="mobile-nav-item active" id="mob-shop-btn">
+          <span class="mob-icon">👕</span>
+          <span class="mob-label">Shop</span>
+        </a>
+        <button class="mobile-nav-item" id="mob-search-btn">
+          <span class="mob-icon">⌕</span>
+          <span class="mob-label">Search</span>
+        </button>
+        <button class="mobile-nav-item" id="mob-cart-btn">
+          <div class="mob-cart-badge-wrap">
+            <span class="mob-icon">🛍️</span>
+            <span class="cart-count mob-badge" id="mob-cart-count">0</span>
+          </div>
+          <span class="mob-label">Bag</span>
+        </button>
+        <button class="mobile-nav-item" id="mob-orders-btn" style="display: none;">
+          <span class="mob-icon">📦</span>
+          <span class="mob-label">Orders</span>
+        </button>
+        <button class="mobile-nav-item" id="mob-account-btn">
+          <span class="mob-icon">👤</span>
+          <span class="mob-label" id="mob-account-label">Account</span>
+        </button>
+      </nav>
+  </div> <!-- /#customer-storefront-view -->
+
+  <!-- Background Overlay for Drawers & Modals -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Shopping Bag / Cart Drawer -->
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">YOUR BAG</p>
+        <h2>Your bag (<span class="cart-count" id="drawer-cart-count">0</span>)</h2>
+      </div>
+      <button class="close-drawer" id="close-cart-btn" aria-label="Close bag">×</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="free-shipping-meter" id="free-shipping-meter">
+      <div class="meter-text" id="meter-text">Add items for FREE shipping</div>
+      <div class="meter-track">
+        <div class="meter-fill" id="meter-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Quick Shipping Pincode Estimator -->
+    <div class="pincode-checker-box">
+      <span class="pincode-icon">📍</span>
+      <input type="text" id="cart-pincode-input" placeholder="Enter Pincode (e.g. 721507)" maxlength="6">
+      <button id="cart-pincode-check-btn">Check</button>
+      <div class="pincode-status" id="cart-pincode-status"></div>
+    </div>
+
+    <!-- Cart Items Scrollable Container -->
+    <div class="cart-items" id="cart-items"></div>
+
+    <!-- Empty State -->
+    <div class="cart-empty" id="cart-empty">
+      <span class="empty-icon">♡</span>
+      <h3>Your bag is taking a break.</h3>
+      <button class="button button-dark continue-shopping" id="continue-shopping-btn">Explore the Drop</button>
+    </div>
+
+    <!-- Cart Footer with Pricing & Checkout CTA -->
+    <div class="cart-footer" id="cart-footer">
+      <div class="cost-breakdown">
+        <div class="subtotal-row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">₹0</strong>
+        </div>
+        <div class="shipping-row">
+          <span>Estimated Shipping</span>
+          <span id="cart-shipping-fee">Calculated at checkout</span>
+        </div>
+        <div class="tax-note">Inclusive of all taxes (GST 5%)</div>
+      </div>
+      <button class="button button-dark checkout-button" id="start-checkout-btn">
+        Proceed to Checkout <span>→</span>
+      </button>
+      <div class="payment-badges-row">
+        <span>🔒 Secure Checkout</span>
+        <span>📦 Pay on Delivery</span>
+        <span>🚚 Fast Express Dispatch</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Multi-Step Checkout Modal / Drawer -->
+  <dialog class="checkout-modal" id="checkout-modal">
+    <div class="checkout-modal-content">
+      <div class="checkout-header">
+        <div>
+          <p class="eyebrow">UPRUMM SECURE CHECKOUT</p>
+          <h2>Complete Your Order</h2>
+        </div>
+        <button class="modal-close" id="close-checkout-btn" aria-label="Close checkout">×</button>
+      </div>
+
+      <!-- Checkout Stepper Tabs -->
+      <div class="checkout-steps-bar">
+        <div class="step-indicator active" id="step-ind-1">
+          <span class="step-num">1</span> Shipping Details
+        </div>
+        <div class="step-indicator" id="step-ind-2">
+          <span class="step-num">2</span> Delivery Method
+        </div>
+        <div class="step-indicator" id="step-ind-3">
+          <span class="step-num">3</span> Place Order
+        </div>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <!-- Step 1: Customer Details & Shipping Address -->
+        <div class="checkout-step-panel active" id="step-panel-1">
+          <div class="form-section-title">
+            <h3>Contact & Delivery Address</h3>
+            <span class="badge-guest" id="checkout-user-status">Guest Checkout</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="co-name">Full Name *</label>
+              <input type="text" id="co-name" placeholder="Priya Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="co-phone">Mobile Phone (for delivery updates) *</label>
+              <input type="tel" id="co-phone" placeholder="9749535523" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="co-email">Email Address (for order receipt) *</label>
+            <input type="email" id="co-email" placeholder="priya@example.com" required>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="co-pincode">Pincode *</label>
+              <input type="text" id="co-pincode" placeholder="400001" maxlength="6" required>
+            </div>
+            <div class="form-group">
+              <label for="co-city">City *</label>
+              <input type="text" id="co-city" placeholder="Mumbai" required>
+            </div>
+            <div class="form-group">
+              <label for="co-state">State *</label>
+              <input type="text" id="co-state" placeholder="Maharashtra" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="co-address">Street Address / Flat / Building *</label>
+            <input type="text" id="co-address" placeholder="Flat 402, Sunshine Apts, Bandra West" required>
+          </div>
+
+          <div class="form-group">
+            <label for="co-landmark">Landmark (Optional)</label>
+            <input type="text" id="co-landmark" placeholder="Near Linking Road">
+          </div>
+
+          <div class="step-nav-actions">
+            <div></div>
+            <button type="button" class="button button-dark" id="btn-to-step-2">Continue to Delivery
+              <span>→</span></button>
+          </div>
+        </div>
+
+        <!-- Step 2: Shipping Options -->
+        <div class="checkout-step-panel" id="step-panel-2">
+          <div class="form-section-title">
+            <h3>Select Shipping Method</h3>
+            <span class="text-muted">Calculated for your destination</span>
+          </div>
+
+          <div class="shipping-options-list">
+            <label class="shipping-option-card selected">
+              <input type="radio" name="shipping-method" value="standard" checked>
+              <div class="soc-info">
+                <strong>Standard Studio Delivery</strong>
+                <p>Delivery in 3-5 business days via Delhivery Surface</p>
+              </div>
+              <div class="soc-price" id="soc-standard-price">₹0</div>
+            </label>
+
+            <label class="shipping-option-card">
+              <input type="radio" name="shipping-method" value="express">
+              <div class="soc-info">
+                <strong>Priority Express Air Courier ⚡</strong>
+                <p>Delivery in 1-2 business days with BlueDart Priority Air</p>
+              </div>
+              <div class="soc-price" id="soc-express-price">₹149</div>
+            </label>
+          </div>
+
+          <div class="delivery-pincode-preview" id="delivery-pincode-preview">
+            Delivering to: <span id="co-preview-dest">Enter address in Step 1</span>
+          </div>
+
+          <div class="step-nav-actions">
+            <button type="button" class="button button-outline" id="btn-back-to-1"><span>←</span> Back</button>
+            <button type="button" class="button button-dark" id="btn-to-step-3">Continue to Place Order
+              <span>→</span></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Method & Place Order -->
+        <div class="checkout-step-panel" id="step-panel-3">
+          <div class="form-section-title">
+            <h3>Payment Method</h3>
+            <span class="badge-tag green">CASH ON DELIVERY</span>
+          </div>
+
+          <div class="payment-methods-grid">
+            <label class="payment-method-card selected">
+              <input type="radio" name="payment-method" value="cod" checked>
+              <div class="pm-info">
+                <div class="pm-title-row">
+                  <strong>Cash on Delivery (COD) / Pay on Delivery</strong>
+                  <span class="badge-tag green">VERIFIED</span>
+                </div>
+                <p>Pay comfortably in cash or UPI when your shipment arrives at your doorstep. No advance online payment required.</p>
+              </div>
+            </label>
+          </div>
+
+          <!-- Final Order Bill Breakdown -->
+          <div class="checkout-order-summary">
+            <h4>Order Summary</h4>
+            <div class="cos-line">
+              <span>Items Total (<span id="co-item-count">0</span> items)</span>
+              <span id="co-items-total">₹0</span>
+            </div>
+            <div class="cos-line">
+              <span>Shipping Fee</span>
+              <span id="co-shipping-total">₹0</span>
+            </div>
+            <div class="cos-line total">
+              <strong>Grand Total (Pay on Delivery)</strong>
+              <strong id="co-grand-total">₹0</strong>
+            </div>
+          </div>
+
+          <div class="step-nav-actions">
+            <button type="button" class="button button-outline" id="btn-back-to-2"><span>←</span> Back</button>
+            <button type="submit" class="button button-dark pay-now-btn" id="btn-pay-now">
+              Place Order (Cash on Delivery) 🛍️
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Order Success & Confirmation Dialog -->
+  <dialog class="order-success-modal" id="order-success-modal">
+    <div class="osm-content">
+      <div class="osm-celebration">✳</div>
+      <p class="eyebrow green">ORDER CONFIRMED · CASH ON DELIVERY</p>
+      <h2>Thank you for your order!</h2>
+      <p class="osm-sub">We’ve received your order and our print studio is already prepping your shirts.</p>
+
+      <div class="osm-card">
+        <div class="osm-row">
+          <span>Order Reference</span>
+          <strong id="osm-order-id">UPR-2026-0001</strong>
+        </div>
+        <div class="osm-row">
+          <span>Payment Status</span>
+          <span class="badge-tag green" id="osm-payment-status">Cash on Delivery (Pay on Delivery)</span>
+        </div>
+        <div class="osm-row">
+          <span>Estimated Delivery</span>
+          <strong id="osm-est-date">3-5 Days</strong>
+        </div>
+        <div class="osm-row">
+          <span>Courier Partner</span>
+          <span id="osm-courier-partner">Delhivery Express</span>
+        </div>
+        <div class="osm-row">
+          <span>Tracking AWB</span>
+          <code id="osm-awb-code">DEL-984210984IN</code>
+        </div>
+      </div>
+
+      <div class="osm-actions">
+        <button class="button button-dark" id="osm-track-btn">Track Order Live <span>↗</span></button>
+        <button class="button button-outline" id="osm-invoice-btn">View Tax Invoice <span>📄</span></button>
+        <button class="button button-light" id="osm-continue-btn">Continue Shopping</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Live Order Tracking Modal -->
+  <dialog class="order-tracking-modal" id="order-tracking-modal">
+    <div class="tracking-modal-content">
+      <div class="tracking-header">
+        <div>
+          <p class="eyebrow">REAL-TIME SHIPMENT TRACKER</p>
+          <h2>Track Your Uprumm Order</h2>
+        </div>
+        <button class="modal-close" id="close-tracking-btn" aria-label="Close tracking">×</button>
+      </div>
+
+      <!-- Tracking Search Box -->
+      <div class="tracking-search-bar">
+        <input type="text" id="tracking-search-input" placeholder="Enter Order ID (e.g. UPR-8821)" autocomplete="off">
+        <button id="tracking-search-submit">Track Shipment <span>→</span></button>
+      </div>
+
+      <!-- Tracking Result Container -->
+      <div class="tracking-result-panel" id="tracking-result-panel">
+        <div class="tracking-order-summary">
+          <div>
+            <h3 id="tr-order-id">Order #UPR-2026-8821</h3>
+            <p id="tr-order-date">Placed on Oct 16, 2026</p>
+          </div>
+          <div class="tr-badge-group">
+            <span class="badge-tag green" id="tr-status-badge">DISPATCHED</span>
+            <span class="badge-tag" id="tr-courier-badge">Delhivery AWB: DEL-772918</span>
+          </div>
+        </div>
+
+        <!-- 5-Step Order Status Stepper -->
+        <div class="tracking-stepper">
+          <div class="step-point done" data-status="placed">
+            <div class="point-circle">✓</div>
+            <div class="point-info">
+              <strong>Order Placed</strong>
+              <small id="track-time-placed">Oct 16, 10:30 AM</small>
+            </div>
+          </div>
+          <div class="step-line done"></div>
+
+          <div class="step-point done" data-status="confirmed">
+            <div class="point-circle">✓</div>
+            <div class="point-info">
+              <strong>Order Confirmed</strong>
+              <small id="track-time-confirmed">Verified for Delivery</small>
+            </div>
+          </div>
+          <div class="step-line done"></div>
+
+          <div class="step-point done" data-status="printing">
+            <div class="point-circle">✓</div>
+            <div class="point-info">
+              <strong>Print Studio Prep</strong>
+              <small id="track-time-printing">Custom Screen Printing</small>
+            </div>
+          </div>
+          <div class="step-line active"></div>
+
+          <div class="step-point active" data-status="shipped">
+            <div class="point-circle">🚚</div>
+            <div class="point-info">
+              <strong>Dispatched / In Transit</strong>
+              <small id="track-time-shipped">Delhivery Hub</small>
+            </div>
+          </div>
+          <div class="step-line"></div>
+
+          <div class="step-point" data-status="delivered">
+            <div class="point-circle">📦</div>
+            <div class="point-info">
+              <strong>Delivered</strong>
+              <small id="track-time-delivered">Pending Arrival</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipment Details Grid -->
+        <div class="shipment-meta-grid">
+          <div class="sm-card">
+            <span class="sm-label">DELIVERY ADDRESS</span>
+            <p id="tr-address">Flat 402, Sunshine Apts, Bandra West, Mumbai, Maharashtra - 400001</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">RECIPIENT CONTACT</span>
+            <p id="tr-customer">Priya Sharma · +91 9876543210</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">PAYMENT METHOD</span>
+            <p id="tr-payment">Cash on Delivery (Pay on Delivery)</p>
+          </div>
+          <div class="sm-card">
+            <span class="sm-label">ESTIMATED ARRIVAL</span>
+            <p id="tr-arrival" class="highlight-text">Expected in 2 business days</p>
+          </div>
+        </div>
+
+        <!-- Ordered Items Preview in Tracking -->
+        <div class="tr-items-box">
+          <h4>Items in this Shipment</h4>
+          <div id="tr-items-list" class="tr-items-list"></div>
+        </div>
+
+        <div class="tr-footer-actions">
+          <button class="button button-outline" id="tr-download-invoice-btn">Download GST Tax Invoice
+            <span>📄</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Printable GST Tax Invoice Modal -->
+  <dialog class="invoice-modal" id="invoice-modal">
+    <div class="invoice-container" id="printable-invoice">
+      <div class="invoice-toolbar">
+        <button class="button button-dark" id="print-invoice-btn">Print / Save as PDF <span>🖨️</span></button>
+        <button class="modal-close" id="close-invoice-btn" aria-label="Close invoice">×</button>
+      </div>
+
+      <div class="invoice-paper">
+        <div class="inv-header">
+          <div>
+            <h1 class="inv-brand">uprumm<span>®</span></h1>
+            <p class="inv-tagline">Uprumm Studio LLP · Independent Printwear</p>
+            <p class="inv-addr">Plot 14, Industrial Print District, Mumbai, MH - 400072<br>Helpline: +91 97495 35523 ·
+              tudurajanikanta@gmail.com<br>GSTIN: 27AABCU9812K1Z9</p>
+          </div>
+          <div class="inv-meta">
+            <h2>TAX INVOICE</h2>
+            <div class="inv-badge" id="inv-badge">CASH ON DELIVERY</div>
+            <p><strong>Invoice No:</strong> <span id="inv-num">INV-2026-001</span></p>
+            <p><strong>Order Ref:</strong> <span id="inv-order-ref">UPR-2026-8821</span></p>
+            <p><strong>Date:</strong> <span id="inv-date">16/10/2026</span></p>
+            <p><strong>Payment Method:</strong> <span id="inv-pay-id">Cash on Delivery</span></p>
+          </div>
+        </div>
+
+        <hr class="inv-divider">
+
+        <div class="inv-addresses">
+          <div class="inv-billed-to">
+            <strong>Billed & Shipped To:</strong>
+            <p id="inv-customer-name">Priya Sharma</p>
+            <p id="inv-customer-address">Flat 402, Sunshine Apts, Bandra West</p>
+            <p id="inv-customer-city">Mumbai, Maharashtra - 400001</p>
+            <p id="inv-customer-contact">Phone: +91 9876543210 | Email: priya@example.com</p>
+          </div>
+          <div class="inv-dispatch-details">
+            <strong>Shipping & Dispatch:</strong>
+            <p>Courier: <span id="inv-courier">Delhivery Surface</span></p>
+            <p>AWB Tracking: <span id="inv-awb">DEL-984210984IN</span></p>
+            <p>Place of Supply: Maharashtra (27)</p>
+          </div>
+        </div>
+
+        <table class="inv-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Description</th>
+              <th>HSN</th>
+              <th>Size</th>
+              <th>Qty</th>
+              <th>Unit Rate</th>
+              <th>Amount (INR)</th>
+            </tr>
+          </thead>
+          <tbody id="inv-table-body">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+
+        <div class="inv-calc-section">
+          <div class="inv-notes">
+            <p><strong>Notes & Return Policy:</strong></p>
+            <p>7-day easy exchange for sizing. For questions contact support@uprumm.com.</p>
+            <p>Thank you for supporting independent print culture!</p>
+          </div>
+          <div class="inv-totals">
+            <div class="it-row"><span>Subtotal:</span> <span id="inv-subtotal">₹1,798</span></div>
+            <div class="it-row"><span>Shipping Charges:</span> <span id="inv-shipping">₹0</span></div>
+            <div class="it-row"><span>CGST (2.5%):</span> <span id="inv-cgst">₹42.80</span></div>
+            <div class="it-row"><span>SGST (2.5%):</span> <span id="inv-sgst">₹42.80</span></div>
+            <div class="it-row total"><strong>Grand Total:</strong> <strong id="inv-grand-total">₹1,798</strong></div>
+          </div>
+        </div>
+
+        <div class="inv-footer">
+          <p>This is a computer-generated tax invoice. No physical signature required.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Customer Accounts Modal (Login / Register / Profile) -->
+  <dialog class="auth-modal" id="auth-modal">
+    <div class="auth-container">
+      <div class="auth-header">
+        <div>
+          <span class="eyebrow" id="auth-modal-eyebrow">STORE PORTAL</span>
+          <h2 id="auth-modal-title">Welcome to Uprumm</h2>
+        </div>
+        <button class="modal-close" id="close-auth-btn" aria-label="Close account modal">×</button>
+      </div>
+
+      <!-- Auth Navigation Tabs -->
+      <div class="auth-nav-tabs" id="auth-nav-tabs">
+        <button class="auth-tab active" data-target="login" id="tab-login-btn">Sign In</button>
+        <button class="auth-tab" data-target="register" id="tab-register-btn">Create Account</button>
+        <button class="auth-tab" data-target="profile" id="tab-profile-btn" style="display: none;">My Account</button>
+        <button class="auth-tab" data-target="custom-studio" id="tab-custom-studio-btn" style="display: none;">🎨 Design
+          Custom Tee</button>
+      </div>
+
+      <!-- Tab 1: Customer Login Form -->
+      <div class="auth-tab-panel active" id="auth-panel-login">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" placeholder="Enter your email ID" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="button button-dark auth-submit-btn">Sign In to Uprumm <span>→</span></button>
+        </form>
+      </div>
+
+      <!-- Tab 2: Register Form -->
+      <div class="auth-tab-panel" id="auth-panel-register">
+        <form id="register-form">
+          <div class="form-group">
+            <label for="reg-name">Full Name *</label>
+            <input type="text" id="reg-name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-email">Email Address *</label>
+            <input type="email" id="reg-email" placeholder="Enter your email ID" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-phone">Mobile Phone *</label>
+            <input type="tel" id="reg-phone" placeholder="Enter your Phone Number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-password">Password *</label>
+            <input type="password" id="reg-password" placeholder="Create a Password" minlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-address">Delivery Address *</label>
+            <input type="text" id="reg-address" placeholder="Flat, House no., Building, Street" required>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="reg-city">City / District *</label>
+              <input type="text" id="reg-city" placeholder="e.g. Kolkata, Mumbai" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-pincode">Pincode *</label>
+              <input type="text" id="reg-pincode" placeholder="e.g. 700001" pattern="[0-9]{6}" required>
+            </div>
+          </div>
+          <button type="submit" class="button button-dark auth-submit-btn">Create Account
+            <span>↗</span></button>
+        </form>
+      </div>
+
+      <!-- Tab 3: Customer Profile & Order History -->
+      <div class="auth-tab-panel" id="auth-panel-profile">
+        <div class="profile-hero">
+          <div class="profile-avatar" id="prof-avatar-letter">👤</div>
+          <div>
+            <h3 id="prof-display-name">Customer Account</h3>
+            <p id="prof-display-email">-</p>
+            <span class="badge-tag green" id="prof-badge-tag">UPRUMM CLUB MEMBER</span>
+          </div>
+        </div>
+
+        <div class="profile-sections">
+          <!-- Profile Orders -->
+          <div class="prof-block">
+            <div class="prof-block-title">
+              <h4>My Orders & Tracking</h4>
+              <span class="order-count-badge" id="prof-order-count">0 Orders</span>
+            </div>
+            <div class="prof-orders-list" id="prof-orders-list">
+              <p style="font-size:12px; color:var(--muted);">No past orders found yet.</p>
+            </div>
+          </div>
+
+          <!-- Member Exclusive Custom Studio Launcher -->
+          <div class="prof-block" id="prof-custom-studio-launcher">
+            <div class="prof-block-title">
+              <div>
+                <h4>🎨 Design Your Custom T-Shirt</h4>
+                <p class="prof-block-sub">Design &amp; order custom printed t-shirts with your personal logos &amp;
+                  graphics.</p>
+              </div>
+              <span class="badge-tag lime">MEMBER STUDIO</span>
+            </div>
+            <div class="prof-studio-launch-box">
+              <p>Upload your artwork or brand logo, preview live on our 240 GSM heavy combed cotton tee, and order your
+                custom drop right here in your account.</p>
+              <button type="button" class="button button-dark" id="prof-launch-studio-btn">
+                Open Custom T-Shirt Studio <span>🎨 →</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Saved Addresses -->
+          <div class="prof-block">
+            <div class="prof-block-title">
+              <h4>Saved Shipping Address</h4>
+              <button class="text-link" id="edit-address-btn">Edit Address</button>
+            </div>
+            <div class="saved-address-card" id="prof-address-card">
+              <strong id="prof-addr-name">-</strong>
+              <p id="prof-addr-line">No street address provided yet</p>
+              <p id="prof-addr-city">-</p>
+              <p id="prof-addr-phone">-</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="prof-footer-actions">
+          <button class="button button-outline" id="prof-logout-btn">Log Out</button>
+        </div>
+      </div>
+
+      <!-- Tab 4: Design Your Custom T-Shirt (Exclusive to Customer Account Section) -->
+      <div class="auth-tab-panel" id="auth-panel-custom-studio">
+        <div class="cust-studio-account-header">
+          <button type="button" class="button button-outline" id="cust-back-to-profile-btn"
+            style="min-height:30px; padding:0 12px; font-size:11px;">
+            ← Back to My Account
+          </button>
+          <span class="badge-tag lime">⚡ MEMBER PRINT STUDIO</span>
+        </div>
+
+        <div class="cust-upload-card site-studio-card in-modal">
+          <div class="cust-upload-grid site-studio-grid">
+            <!-- Left: Live T-Shirt Mockup with Customer Logo Overlay -->
+            <div class="cust-mockup-panel">
+              <!-- View Toggle (Front / Back) -->
+              <div class="cust-view-toggle-bar">
+                <button type="button" class="cust-view-btn active" id="cust-view-front-btn" data-view="front">
+                  👕 Front View
+                </button>
+                <button type="button" class="cust-view-btn" id="cust-view-back-btn" data-view="back">
+                  🔄 Back View
+                </button>
+              </div>
+
+              <div class="cust-tee-canvas" id="cust-tee-canvas">
+                <img id="cust-tee-base-img" src="assets/images/black-tee-front.jpg" alt="Custom T-Shirt Cloth Base">
+                <div class="cust-logo-overlay" id="cust-logo-overlay" title="Click &amp; Drag to reposition on shirt">
+                  <!-- Ghost placeholder shown before logo upload -->
+                  <div class="cust-ghost-placeholder" id="cust-ghost-placeholder">
+                    <span class="cgp-icon">🎯</span>
+                    <strong class="cgp-text" id="cust-ghost-placement-label">Center Chest</strong>
+                    <span class="cgp-sub">Print Position</span>
+                  </div>
+                  <!-- Logo Image shown when uploaded -->
+                  <img id="cust-preview-logo-img" src="" alt="Custom Logo Overlay" style="display: none;"
+                    draggable="false">
+                </div>
+              </div>
+              <div class="cust-canvas-tag" id="cust-canvas-tag">LIVE MOCKUP PREVIEW · 240 GSM HEAVY COTTON</div>
+              <small class="cust-canvas-hint">💡 Tip: You can drag the logo directly on the shirt or use the position
+                controls below.</small>
+            </div>
+
+            <!-- Right: Customizer Controls -->
+            <div class="cust-controls-panel">
+              <!-- File Upload Drop Zone -->
+              <div class="cust-file-drop" id="cust-file-drop">
+                <input type="file" id="cust-logo-file-input" accept="image/*" style="display: none;">
+                <span class="cust-upload-icon">🎨</span>
+                <div>
+                  <strong>Upload Your Logo / Graphic Artwork</strong>
+                  <p id="cust-file-name-text">Click to browse or drag &amp; drop transparent PNG, SVG, or high-res JPG
+                  </p>
+                </div>
+                <button type="button" class="button button-dark"
+                  style="min-height: 36px; padding: 0 16px; font-size: 11px;" id="cust-browse-btn">
+                  Choose File 📂
+                </button>
+              </div>
+
+              <!-- Quick Demo Sample Artwork -->
+              <div class="cust-sample-row"
+                style="display:flex; gap:8px; margin-top:-6px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+                <span style="font-size:10px; color:var(--muted); font-weight:700;">OR TEST WITH:</span>
+                <button type="button" class="button button-outline" id="cust-sample-art-btn"
+                  style="min-height:28px; padding:0 12px; font-size:10px; border-color:var(--ink);">
+                  👑 Hansda Cultural Insignia
+                </button>
+                <button type="button" class="button button-outline" id="cust-clear-art-btn"
+                  style="min-height:28px; padding:0 10px; font-size:10px; display:none;">
+                  ✕ Remove Logo
+                </button>
+              </div>
+
+              <!-- T-Shirt Base Color Options (Only Simple Black or White Cloth) -->
+              <div class="cust-form-row">
+                <label>T-Shirt Color:</label>
+                <div class="cust-color-options">
+                  <button type="button" class="cust-color-chip active" data-color="Classic Black" data-hex="#18191a"
+                    data-img="assets/images/black-tee-front.jpg">
+                    ⬛ Simple Black
+                  </button>
+                  <button type="button" class="cust-color-chip" data-color="Pure White" data-hex="#ffffff"
+                    data-img="assets/images/white-tee-front.jpg">
+                    ⬜ Simple White
+                  </button>
+                </div>
+              </div>
+
+              <!-- Size Selection -->
+              <div class="cust-form-row">
+                <label>Select Size:</label>
+                <div class="cust-size-options">
+                  <button type="button" class="cust-size-chip" data-size="S">S</button>
+                  <button type="button" class="cust-size-chip active" data-size="M">M</button>
+                  <button type="button" class="cust-size-chip" data-size="L">L</button>
+                  <button type="button" class="cust-size-chip" data-size="XL">XL</button>
+                  <button type="button" class="cust-size-chip" data-size="XXL">XXL</button>
+                </div>
+              </div>
+
+              <!-- Print Placement Presets -->
+              <div class="cust-form-row cust-placement-row">
+                <div class="cust-placement-header">
+                  <label>Print Position:</label>
+                  <span class="cust-placement-current" id="cust-current-placement-text">Center Chest</span>
+                </div>
+                <div class="cust-placement-chips" id="cust-placement-chips">
+                  <button type="button" class="cust-place-btn active" data-placement="Center Chest" data-top="38"
+                    data-left="50" data-width="42" data-view="front">
+                    🎯 Center Chest
+                  </button>
+                  <button type="button" class="cust-place-btn" data-placement="Left Chest (Pocket)" data-top="32"
+                    data-left="63" data-width="22" data-view="front">
+                    📍 Left Chest (Pocket)
+                  </button>
+                  <button type="button" class="cust-place-btn" data-placement="Right Chest" data-top="32" data-left="37"
+                    data-width="22" data-view="front">
+                    📍 Right Chest
+                  </button>
+                  <button type="button" class="cust-place-btn" data-placement="Oversized Front" data-top="44"
+                    data-left="50" data-width="54" data-view="front">
+                    📐 Oversized Front
+                  </button>
+                  <button type="button" class="cust-place-btn" data-placement="Full Back Graphic" data-top="44"
+                    data-left="50" data-width="54" data-view="back">
+                    🔄 Full Back Print
+                  </button>
+                  <button type="button" class="cust-place-btn" data-placement="Back Neck Insignia" data-top="22"
+                    data-left="50" data-width="20" data-view="back">
+                    🏷️ Back Neck
+                  </button>
+                </div>
+                <!-- Hidden fallback select kept for form compatibility -->
+                <select id="cust-placement-select" class="cust-select" style="display: none;">
+                  <option value="Chest Center (10x10 in)">Chest Center (10 × 10 in)</option>
+                  <option value="Left Chest Pocket Insignia">Left Chest Pocket Insignia (4 × 4 in)</option>
+                  <option value="Oversized Back Graphic">Oversized Back Graphic (12 × 14 in)</option>
+                </select>
+              </div>
+
+              <!-- Fine-Tune Position & Size Adjusters -->
+              <div class="cust-nudge-panel">
+                <div class="cust-nudge-col">
+                  <label>Position Nudge:</label>
+                  <div class="cust-dpad">
+                    <button type="button" class="dpad-btn" id="cust-nudge-up" title="Move Up">▲</button>
+                    <div class="dpad-row">
+                      <button type="button" class="dpad-btn" id="cust-nudge-left" title="Move Left">◀</button>
+                      <button type="button" class="dpad-btn dpad-center" id="cust-nudge-center"
+                        title="Reset to Center">↺ Center</button>
+                      <button type="button" class="dpad-btn" id="cust-nudge-right" title="Move Right">▶</button>
+                    </div>
+                    <button type="button" class="dpad-btn" id="cust-nudge-down" title="Move Down">▼</button>
+                  </div>
+                </div>
+
+                <div class="cust-scale-col">
+                  <div class="cust-scale-header">
+                    <label for="cust-scale-slider">Print Scale (Size):</label>
+                    <strong id="cust-scale-val">40%</strong>
+                  </div>
+                  <div class="cust-scale-chips">
+                    <button type="button" class="cust-scale-btn" data-scale="22">S (Pocket)</button>
+                    <button type="button" class="cust-scale-btn active" data-scale="40">M (Standard)</button>
+                    <button type="button" class="cust-scale-btn" data-scale="50">L (Large)</button>
+                    <button type="button" class="cust-scale-btn" data-scale="60">XL (Oversized)</button>
+                  </div>
+                  <input type="range" id="cust-scale-slider" min="16" max="65" value="40" class="cust-range-slider">
+                  <div class="cust-range-legend">
+                    <span>Small / Pocket (22%)</span>
+                    <span>Standard (40%)</span>
+                    <span>Oversized (60%)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Add to Bag CTA -->
+              <div class="cust-action-row">
+                <div class="cust-price-info">
+                  <span class="cust-price">₹999</span>
+                  <span class="cust-mrp">₹1,499</span>
+                  <small>240 GSM Bio-Washed Combed Cotton · Free Express Shipping</small>
+                </div>
+                <button type="button" class="button button-dark" id="cust-add-to-bag-btn" disabled>
+                  Upload Logo to Order <span>🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer's Saved Uploads History -->
+          <div class="cust-saved-uploads" id="cust-saved-uploads-wrap">
+            <h5>My Saved Custom Designs</h5>
+            <div class="cust-saved-list" id="cust-saved-list">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Product Details Modal -->
+  <dialog class="product-modal" id="product-modal">
+    <button class="modal-close" id="close-product-modal-btn" aria-label="Close product details">×</button>
+    <div id="modal-content"></div>
+  </dialog>
+
+  <!-- Search Modal -->
+  <dialog class="search-modal" id="search-modal">
+    <form method="dialog" class="search-form" id="search-form">
+      <button class="modal-close" id="close-search-btn" aria-label="Close search">×</button>
+      <p class="eyebrow">FIND YOUR FIT</p>
+      <input id="search-input" type="search" placeholder="Search graphic tees, oversized, minimal..."
+        autocomplete="off">
+      <div id="search-results"></div>
+    </form>
+  </dialog>
+
+  <!-- Contact Us Modal -->
+  <dialog class="contact-modal" id="contact-modal">
+    <div class="contact-modal-box">
+      <button class="modal-close" id="close-contact-modal-btn" aria-label="Close contact modal">×</button>
+      <div class="cm-header">
+        <p class="eyebrow"><span class="dot"></span> DIRECT STUDIO SUPPORT</p>
+        <h2>Send Us a Message</h2>
+        <p class="cm-sub">Have questions regarding order shipping, custom artwork, sizing, or store feedback? Send us a
+          note below or reach us directly at <strong>+91 97495 35523</strong>.</p>
+      </div>
+
+      <div class="cm-quick-actions" style="display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;">
+        <a href="tel:+919749535523" class="button button-outline"
+          style="flex:1; min-width:130px; text-align:center; padding:9px 12px; font-size:12px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px;">
+          📞 Call +91 97495 35523
+        </a>
+        <a href="https://wa.me/919749535523?text=Hi%20Uprumm%20Studio%2C%20I%20have%20an%20inquiry" target="_blank"
+          rel="noopener noreferrer" class="button button-outline"
+          style="flex:1; min-width:130px; text-align:center; padding:9px 12px; font-size:12px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; border-color:#25d366; color:#128c7e;">
+          💬 WhatsApp Chat
+        </a>
+        <a href="https://www.instagram.com/i_rkt_02/?hl=en" target="_blank" rel="noopener noreferrer"
+          class="button button-outline"
+          style="flex:1; min-width:130px; text-align:center; padding:9px 12px; font-size:12px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; border-color:#e1306c; color:#c13584;">
+          📸 Instagram @i_rkt_02
+        </a>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="cm-name">Your Full Name *</label>
+            <input type="text" id="cm-name" placeholder="Rajanikanta Tudu" required>
+          </div>
+          <div class="form-group">
+            <label for="cm-email">Your Email Address *</label>
+            <input type="email" id="cm-email" placeholder="tudurajanikanta@gmail.com" required>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="cm-phone">Mobile Phone (Optional)</label>
+            <input type="tel" id="cm-phone" placeholder="9749535523">
+          </div>
+          <div class="form-group">
+            <label for="cm-topic">Reason for Inquiry *</label>
+            <select id="cm-topic" required>
+              <option value="General Inquiry">General Inquiry / Sizing</option>
+              <option value="Order Tracking">Order &amp; Delivery Tracking</option>
+              <option value="Custom T-Shirt Print">Custom T-Shirt Printing</option>
+              <option value="Bulk Order">Bulk Orders &amp; Studio Drops</option>
+              <option value="Feedback">Feedback &amp; Collaboration</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cm-message">Your Message *</label>
+          <textarea id="cm-message" rows="4" placeholder="How can our studio team assist you today?"
+            required></textarea>
+        </div>
+
+        <div class="cm-footer">
+          <span class="cm-target-note">Direct Support: <strong>+91 97495 35523</strong> ·
+            <strong>tudurajanikanta@gmail.com</strong></span>
+          <button type="submit" class="button button-dark" id="cm-submit-btn">Send Message <span>↗</span></button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Global Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript App -->
+  <script src="js/app.js?v=4.0"></script>
+</body>
+
+</html>
